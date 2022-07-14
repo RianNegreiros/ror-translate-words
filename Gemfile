@@ -33,3 +33,8 @@ end
 group :development do
   gem "web-console"
 end
+
+group :test do
+  gem "shoulda-matchers", "~> 5.1"
+  gem "rails-controller-testing", "~> 1.0"
+end
