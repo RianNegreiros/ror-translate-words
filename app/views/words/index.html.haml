@@ -1,0 +1,6 @@
+%h1 Words
+%table
+  - @words.each do |word|
+    %tr
+      %td= word.value
+      %td= word.language

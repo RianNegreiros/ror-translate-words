@@ -38,3 +38,5 @@ group :test do
   gem "shoulda-matchers", "~> 5.1"
   gem "rails-controller-testing", "~> 1.0"
 end
+
+gem "simple_form", "~> 5.1"
