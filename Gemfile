@@ -41,3 +41,5 @@ group :test do
 end
 
 gem "simple_form", "~> 5.1"
+
+gem "bootstrap", "~> 5.1"
