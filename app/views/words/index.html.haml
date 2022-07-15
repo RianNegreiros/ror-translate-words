@@ -18,6 +18,7 @@
         %td
           = word.value
         %td
-          = word.language.name
+          = word.language&.name
         %td
           = link_to('Show', word_path(word))
+          = link_to('Edit', edit_word_path(word))
