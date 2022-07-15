@@ -1,4 +1,4 @@
 class Word < ApplicationRecord
+  belongs_to :language
   validates :value, :language, presence: true
-  validates :language, inclusion: { in: LanguageList::COMMON_LANGUAGES.map(&:name) }
 end

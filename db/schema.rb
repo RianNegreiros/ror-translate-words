@@ -10,15 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_14_132241) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_15_161456) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "words", force: :cascade do |t|
-    t.string "value"
-    t.string "language"
+  create_table "languages", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "words", force: :cascade do |t|
+    t.string "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "language_id", null: false
+    t.index ["language_id"], name: "index_words_on_language_id"
+  end
+
+  add_foreign_key "words", "languages"
 end
