@@ -3,6 +3,10 @@ class WordsController < ApplicationController
     @words = Word.all
   end
 
+  def show
+    @word = Word.find(params[:id])
+  end
+
   def new
     @word = Word.new
   end
