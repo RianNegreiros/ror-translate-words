@@ -1,6 +1,23 @@
 %h1 Words
-%table
-  - @words.each do |word|
+%table.table
+  %thead
     %tr
-      %td= word.value
-      %td= word.language
+      %th
+        \#
+      %th
+        Value
+      %th
+        Language
+      %th
+        Actions
+  %tbody
+    - @words.each do |word|
+      %tr
+        %td
+          = word.id
+        %td
+          = word.value
+        %td
+          = word.language
+        %td
+          = link_to('Show', word_path(word))
