@@ -1,0 +1,25 @@
+%h1 Words
+%table.table
+  %thead
+    %tr
+      %th
+        \#
+      %th
+        Value
+      %th
+        Language
+      %th
+        Actions
+  %tbody
+    - @words.each do |word|
+      %tr
+        %td
+          = word.id
+        %td
+          = word.value
+        %td
+          = word.language&.name
+        %td
+          = link_to('Show', word_path(word))
+          = link_to('Edit', edit_word_path(word))
+          = link_to('Destroy', word_path(word), method:delete)
