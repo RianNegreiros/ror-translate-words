@@ -13,7 +13,6 @@ class WordsController < ApplicationController
 
   def create
     @word = Word.create(word_params)
-
     if @word.save
       redirect_to(words_path)
     else
@@ -32,6 +31,12 @@ class WordsController < ApplicationController
     else
       render :edit
     end
+  end
+  
+  def destroy
+    @word = Word.find(params[:id])
+    @word.destroy
+    redirect_to(words_path)
   end
 
   private
